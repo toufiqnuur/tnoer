@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.overlay {
+  background-color: #fff;
+  background-image: linear-gradient(#f0f0f0 1px, transparent 1px),
+    linear-gradient(to right, #f0f0f0 1px, #fff 1px);
+  background-size: 20px 20px;
+}
+
+* {
+  /* border: 1px dotted red; */
+}
