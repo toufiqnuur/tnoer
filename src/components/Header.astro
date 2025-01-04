@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets'
+---
+
+<header class="container py-4">
+	<div class="flex items-center justify-between">
+		<a class="px-4 text-xl font-bold uppercase" href="/">
+			<Image src="/img/easter-icon.png" width={128} height={80} alt="Tnoer" />
+			<!-- Touf<span class="rounded-md bg-black text-white">iq.</span> -->
+		</a>
+		<button class="px-4 py-3" aria-label="Menu">
+			<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+				<path
+					fill="none"
+					stroke="currentColor"
+					stroke-linecap="round"
+					stroke-width="1.5"
+					d="M20 7H4m16 5H4m16 5H4"></path>
+			</svg>
+		</button>
+	</div>
+</header>

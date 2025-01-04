@@ -1,0 +1,43 @@
+---
+interface Props {
+	data: {
+		image: string
+		title: string
+		year: string
+		description: string
+		stack: string
+		source: string
+		url: string
+	}
+}
+
+const { data } = Astro.props
+---
+
+<div class="card flex flex-col overflow-hidden rounded-xl border-2 border-black">
+	<div class="relative aspect-[16/10] border-b-2 border-black bg-zinc-100">
+		<img src={data.image} alt={data.title} />
+		<div
+			class="absolute -bottom-5 right-4 rounded-lg border-2 border-black bg-yellow-300 px-4 py-2 text-sm font-semibold"
+		>
+			{data.year}
+		</div>
+	</div>
+	<div class="flex flex-1 flex-col bg-blue-50 p-4">
+		<div class="flex-1">
+			<h5 class="mt-1 text-lg font-semibold">{data.title}</h5>
+			<p class="mt-3 text-xs font-medium text-zinc-600">{data.description}</p>
+			<p class="mt-2 text-sm font-medium">{data.stack}</p>
+		</div>
+		<div class="mt-6 flex justify-end gap-4">
+			<a class="font-semibold text-blue-800" href={data.source} target="_blank">Repository</a>
+			<a class="font-semibold text-blue-800" href={data.url} target="_blank">Live</a>
+		</div>
+	</div>
+</div>
+
+<style>
+	.card {
+		box-shadow: 4px 4px 0px 0px #000;
+	}
+</style>

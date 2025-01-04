@@ -1,0 +1,77 @@
+---
+import { Icon } from 'astro-icon/components'
+const currentYear = new Date().getFullYear()
+
+const socialLinks = [
+	{
+		name: 'Gmail',
+		icon: 'simple-icons:gmail',
+		url: 'mailto:toufiq.nuur@gmail.com'
+	},
+	{
+		name: 'GitHub',
+		icon: 'simple-icons:github',
+		url: 'https://github.com/toufiqnuur'
+	},
+	{
+		name: 'LinkedIn',
+		icon: 'simple-icons:linkedin',
+		url: 'https://www.linkedin.com/in/toufiqnuur/'
+	}
+]
+
+const siteLinks = [
+	{
+		name: 'Home',
+		url: '/'
+	},
+	{
+		name: 'Projects',
+		url: '/projects'
+	},
+	{
+		name: 'Blog',
+		url: '/blog'
+	},
+	{
+		name: 'About',
+		url: '/about'
+	}
+]
+---
+
+<footer class="border-t-4 border-zinc-800 text-zinc-50">
+	<div class="container px-4 py-8">
+		<div class="flex flex-col gap-8 md:flex-row md:gap-16">
+			<div>
+				<div class="text-xl font-semibold">Toufiq Nuur Rahman.</div>
+				<div class="mt-4 flex items-baseline gap-3">
+					{
+						socialLinks.map((social) => (
+							<a href={social.url} aria-label={social.name} target="_blank">
+								<Icon name={social.icon} size="24" />
+							</a>
+						))
+					}
+				</div>
+			</div>
+			<div>
+				<div class="font-semibold">Navigation</div>
+				<ul class="mt-2 flex flex-col">
+					{
+						siteLinks.map((site) => (
+							<li>
+								<a class="text-sm" href={site.url}>
+									{site.name}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container border-t-2 border-zinc-800 p-4 text-center text-sm font-medium opacity-75">
+		&copy; 2023 - {currentYear} Toufiq. All rights reserved.
+	</div>
+</footer>

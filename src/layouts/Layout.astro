@@ -1,0 +1,32 @@
+---
+import '@fontsource-variable/montserrat'
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta
+			name="description"
+			content="Hi, I'm Toufiq, a passionate Frontend Developer specializing in creating interactive and visually appealing web experiences. With a strong interest in Artificial Intelligence (AI) and Internet of Things (IoT), I aim to build innovative solutions that bridge the gap between technology and user experience. Explore my portfolio to see my latest projects and collaborations."
+		/>
+		<title>Toufiq.</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+	:global(.container) {
+		@apply max-w-5xl md:mx-auto;
+	}
+</style>

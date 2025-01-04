@@ -1,0 +1,38 @@
+[
+	{
+		"image": "/img/dreamagination.jpeg",
+		"title": "Dreamagination",
+		"description": "Dreamagination, UNY Robotic Teams Website (Redesign)",
+		"year": "2023",
+		"stack": "NextJs | Tailwind Css",
+		"source": "https://github.com/toufiqnuur/dreamagination",
+		"url": "https://dreamagination.vercel.app"
+	},
+	{
+		"image": "/img/arkon.jpeg",
+		"title": "Arkon - Artis Konektor",
+		"description": "Platform to connect with local artists",
+		"year": "2023",
+		"stack": "NextJs | Tailwind Css | Supabase",
+		"source": "https://github.com/toufiqnuur/arkon",
+		"url": "https://arkon.vercel.app"
+	},
+	{
+		"image": "/img/sev.jpeg",
+		"title": "Sev - URL Shortener",
+		"description": "URL made simple",
+		"year": "2023",
+		"stack": "NextJs | Chakra UI | Supabase",
+		"source": "https://github.com/toufiqnuur/sev.my.id",
+		"url": "https://sev.my.id"
+	},
+	{
+		"image": "img/skanesga.jpeg",
+		"title": "Skanesga - Landing Page",
+		"description": "SMKN 1 Seyegan Landing Page (not official)",
+		"year": "2021",
+		"stack": "SvelteKit | TailwindCss",
+		"source": "https://github.com/toufiqnuur/skanesga",
+		"url": "https://skanesga.vercel.app"
+	}
+]
