@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+
+@theme {
+	--font-sans: 'Montserrat Variable', 'sans-serif';
+}
+
+@utility container {
+	margin-inline: auto;
+	padding-inline: 2rem;
+	max-width: 1024px;
+}
