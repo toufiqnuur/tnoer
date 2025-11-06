@@ -1,36 +1,36 @@
 ---
 import { Image } from 'astro:assets'
-// import profile from '../assets/profile-me.png'
 
-const resume = 'https://docs.google.com/document/d/1t3YhLvxq3JSK6VozbRlOSUZu4FZkAgfSzlF3WNLNVZ4/edit?usp=drivesdk'
+const resume = 'https://sev.my.id/tnoer-resume'
 ---
 
 <div class="hero py-8">
-	<div class="container px-4 md:flex md:flex-wrap md:items-center md:justify-center md:gap-24">
+	<div class="container md:flex md:flex-wrap md:items-center md:justify-center md:gap-24">
 		<div
-			class="mx-auto h-56 w-56 overflow-hidden rounded-full border-2 border-black bg-blue-400 md:mx-0"
+			class="mx-auto h-56 w-56 overflow-hidden rounded-full border-8 border-white bg-blue-400 shadow-md md:mx-0"
 		>
 			<Image
 				class="pt-8 pl-1"
 				src="/img/profile-me.png"
 				width={256}
 				height={256}
-				alt="Image Profile"
+				alt="Profile"
+				loading="eager"
 			/>
 		</div>
 		<div class="mt-8 text-center md:mt-0 md:text-left">
 			<div class="text-4xl font-bold tracking-tight md:text-6xl">I&apos;m Toufiq.</div>
-			<div class="mt-2 text-xl md:mt-3">Front End Web Developer</div>
+			<div class="mt-2 text-xl capitalize md:mt-3">Fullstack web developer</div>
 			<div class="mt-8 space-x-4">
 				<a
-					class="cursor-pointer rounded-lg border border-white bg-blue-500 px-4 py-2 text-sm font-medium text-white"
+					class="cursor-pointer rounded-xl border border-transparent bg-blue-500 px-4 py-2.5 text-sm font-medium text-white"
 					href={resume}
 					target="_blank"
 				>
-					Download CV
+					Get Resume
 				</a>
 				<a
-					class="rounded-lg border bg-white px-4 py-2 text-sm font-semibold text-blue-600"
+					class="rounded-xl border-2 bg-white px-4 py-2.5 text-sm font-semibold text-blue-500"
 					href="/"
 				>
 					Get in touch
