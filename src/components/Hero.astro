@@ -7,7 +7,7 @@ const resume = 'https://sev.my.id/tnoer-resume'
 <div class="hero py-8">
 	<div class="container md:flex md:flex-wrap md:items-center md:justify-center md:gap-24">
 		<div
-			class="mx-auto h-56 w-56 overflow-hidden rounded-full border-8 border-white bg-blue-400 shadow-md md:mx-0"
+			class="mx-auto h-56 w-56 overflow-hidden rounded-full border-8 border-white bg-blue-400 shadow-md md:mx-0 dark:border-white/50"
 		>
 			<Image
 				class="pt-8 pl-1"
@@ -23,15 +23,15 @@ const resume = 'https://sev.my.id/tnoer-resume'
 			<div class="mt-2 text-xl capitalize md:mt-3">Fullstack web developer</div>
 			<div class="mt-8 space-x-4">
 				<a
-					class="cursor-pointer rounded-xl border border-transparent bg-blue-500 px-4 py-2.5 text-sm font-medium text-white"
+					class="rounded-xl border-r border-b border-blue-500 bg-gradient-to-tl from-blue-500/90 to-blue-400/90 px-4 py-2.5 text-sm font-semibold text-white shadow-md backdrop-blur-2xl dark:from-blue-600/90 dark:to-blue-500/90"
 					href={resume}
 					target="_blank"
 				>
 					Get Resume
 				</a>
 				<a
-					class="rounded-xl border-2 bg-white px-4 py-2.5 text-sm font-semibold text-blue-500"
-					href="/"
+					class="rounded-xl border-r border-b border-blue-200 bg-gradient-to-tl from-blue-100 to-transparent px-4 py-2.5 text-sm font-semibold text-blue-500 shadow-md backdrop-blur-2xl dark:border-zinc-700 dark:from-zinc-900 dark:to-zinc-800 dark:text-blue-400"
+					href="#contacts"
 				>
 					Get in touch
 				</a>
@@ -42,20 +42,31 @@ const resume = 'https://sev.my.id/tnoer-resume'
 
 <style>
 	@reference "tailwindcss/theme";
+
 	.hero {
 		@apply relative;
 	}
+
 	.hero::before {
 		content: '';
 		@apply absolute -top-32 left-0 -z-10 h-[180%] w-full md:h-[250%];
-		background-color: #fff;
 		background-image: linear-gradient(#f0f0f0 1px, transparent 1px),
-			linear-gradient(to right, #f0f0f0 1px, #fff 1px);
+			linear-gradient(to right, #f0f0f0 1px, transparent 1px);
 		background-size: 20px 20px;
 	}
+
 	.hero::after {
 		content: '';
 		@apply absolute -top-32 left-0 -z-10 h-[180%] w-full md:h-[250%];
 		@apply bg-gradient-to-t from-white via-white/10 to-transparent;
+	}
+
+	html[data-theme='dark'] .hero::before {
+		background-image: linear-gradient(#1e1e1e 1px, transparent 1px),
+			linear-gradient(to right, #1e1e1e 1px, transparent 1px);
+	}
+
+	html[data-theme='dark'] .hero::after {
+		@apply from-zinc-900 via-zinc-900/50 to-transparent;
 	}
 </style>
