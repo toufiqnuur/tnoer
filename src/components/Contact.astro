@@ -1,0 +1,33 @@
+---
+const contactMethods = [
+	{ icon: 'icon-[formkit--email]', type: 'Email', name: 'toufiq.nuur@gmail.com' },
+	{ icon: 'icon-[formkit--linkedin]', type: 'LinkedIn', name: 'linkedin.com/in/toufiqnuur' },
+	{ icon: 'icon-[formkit--github]', type: 'GitHub', name: 'github.com/toufiqnuur' }
+]
+---
+
+<div class="container py-8">
+	<h3
+		id="contacts"
+		class="text-3xl font-bold text-zinc-700 md:text-center md:text-4xl dark:text-zinc-200"
+	>
+		Get in touch
+	</h3>
+	<div class="mt-12 grid gap-8 md:grid-cols-3">
+		{
+			contactMethods.map((item) => (
+				<div class="flex items-center gap-4">
+					<div class="flex h-16 w-16 items-center justify-center rounded-3xl border-r border-b border-sky-200 bg-gradient-to-tl from-sky-100 to-transparent dark:border-zinc-700 dark:from-transparent dark:to-zinc-700">
+						<span
+							class={`${item.icon} bg-gradient-to-tl from-sky-500 to-sky-300 text-3xl dark:from-sky-600 dark:to-sky-400`}
+						/>
+					</div>
+					<div class="flex flex-col">
+						<span class="font-medium">{item.type}</span>
+						<span class="text-zinc-400">{item.name}</span>
+					</div>
+				</div>
+			))
+		}
+	</div>
+</div>
