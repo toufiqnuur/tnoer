@@ -9,14 +9,17 @@
 		"astro": "astro"
 	},
 	"dependencies": {
+		"@astrojs/svelte": "^7.2.2",
 		"@fontsource-variable/montserrat": "^5.1.1",
-		"@iconify-json/simple-icons": "^1.2.18",
 		"@tailwindcss/vite": "^4.0.0",
 		"astro": "5.15.3",
-		"astro-icon": "^1.1.5",
-		"tailwindcss": "^4.0.0"
+		"svelte": "^5.43.4",
+		"tailwindcss": "^4.0.0",
+		"typescript": "^5.9.3"
 	},
 	"devDependencies": {
+		"@iconify/json": "^2.2.404",
+		"@iconify/tailwind4": "^1.1.0",
 		"prettier": "^3.4.2",
 		"prettier-plugin-astro": "^0.14.1",
 		"prettier-plugin-tailwindcss": "^0.7.1"
