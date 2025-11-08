@@ -1,0 +1,78 @@
+---
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout>
+	<Header />
+	<main>
+		<div class="container py-8">
+			<h1 class="text-3xl font-bold">Guest Book</h1>
+			<p class="mt-1.5 font-medium text-zinc-600 dark:text-zinc-300">
+				We'd love to hear from you. Leave your mark below.
+			</p>
+			<div id="giscus-container" class="mt-12"></div>
+		</div>
+		<Footer />
+	</main>
+</Layout>
+
+<script>
+	function applyGiscusTheme(themeUrl) {
+		const iframe = document.querySelector('iframe.giscus-frame')
+		if (iframe) {
+			iframe.contentWindow.postMessage(
+				{ giscus: { setConfig: { theme: themeUrl } } },
+				'https://giscus.app'
+			)
+		}
+	}
+
+	function loadGiscus() {
+		const storedTheme = localStorage.getItem('theme')
+		const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches
+
+		const isDark = storedTheme ? storedTheme === 'dark' : systemPreference
+
+		const themeToUse = isDark ? 'dark' : 'light'
+
+		const giscusScript = document.createElement('script')
+		giscusScript.src = 'https://giscus.app/client.js'
+		giscusScript.id = 'giscus-script'
+
+		giscusScript.setAttribute('data-repo', 'toufiqnuur/tnoer')
+		giscusScript.setAttribute('data-repo-id', 'R_kgDOKTn2SA')
+		giscusScript.setAttribute('data-category', 'Show and tell')
+		giscusScript.setAttribute('data-category-id', 'DIC_kwDOKTn2SM4Cxj_j')
+		giscusScript.setAttribute('data-mapping', 'pathname')
+		giscusScript.setAttribute('data-strict', '0')
+		giscusScript.setAttribute('data-reactions-enabled', '0')
+		giscusScript.setAttribute('data-emit-metadata', '0')
+		giscusScript.setAttribute('data-input-position', 'top')
+
+		giscusScript.setAttribute('data-theme', themeToUse)
+
+		giscusScript.setAttribute('data-lang', 'en')
+		giscusScript.setAttribute('data-loading', 'lazy')
+		giscusScript.setAttribute('crossorigin', 'anonymous')
+		giscusScript.async = true
+
+		const container = document.getElementById('giscus-container')
+		container.appendChild(giscusScript)
+	}
+
+	const observer = new MutationObserver((mutations) => {
+		mutations.forEach((mutation) => {
+			if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+				const newIsDark = document.documentElement.getAttribute('data-theme') === 'dark'
+				const newTheme = newIsDark ? 'dark' : 'light'
+				applyGiscusTheme(newTheme)
+			}
+		})
+	})
+
+	observer.observe(document.documentElement, { attributes: true })
+
+	loadGiscus()
+</script>
