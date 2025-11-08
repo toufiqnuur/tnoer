@@ -1,8 +1,23 @@
 ---
 const contactMethods = [
-	{ icon: 'icon-[formkit--email]', type: 'Email', name: 'toufiq.nuur@gmail.com' },
-	{ icon: 'icon-[formkit--linkedin]', type: 'LinkedIn', name: 'linkedin.com/in/toufiqnuur' },
-	{ icon: 'icon-[formkit--github]', type: 'GitHub', name: 'github.com/toufiqnuur' }
+	{
+		icon: 'icon-[formkit--email]',
+		type: 'Email',
+		name: 'toufiq.nuur',
+		url: 'mailto:toufiq.nuur@gmail.com'
+	},
+	{
+		icon: 'icon-[formkit--linkedin]',
+		type: 'LinkedIn',
+		name: 'toufiqnuur',
+		url: 'https://www.linkedin.com/in/toufiqnuur/'
+	},
+	{
+		icon: 'icon-[formkit--github]',
+		type: 'GitHub',
+		name: 'toufiqnuur',
+		url: 'https://github.com/toufiqnuur'
+	}
 ]
 ---
 
@@ -17,14 +32,16 @@ const contactMethods = [
 		{
 			contactMethods.map((item) => (
 				<div class="flex items-center gap-4">
-					<div class="flex h-16 w-16 items-center justify-center rounded-3xl border-r border-b border-sky-200 bg-gradient-to-tl from-sky-100 to-transparent dark:border-zinc-700 dark:from-transparent dark:to-zinc-700">
+					<div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-3xl border-r border-b border-sky-200 bg-gradient-to-tl from-sky-100 to-transparent dark:border-zinc-700 dark:from-transparent dark:to-zinc-700">
 						<span
 							class={`${item.icon} bg-gradient-to-tl from-sky-500 to-sky-300 text-3xl dark:from-sky-600 dark:to-sky-400`}
 						/>
 					</div>
 					<div class="flex flex-col">
 						<span class="font-medium">{item.type}</span>
-						<span class="text-zinc-400">{item.name}</span>
+						<a href={item.url} target="_blank" class="text-zinc-400">
+							{item.name}
+						</a>
 					</div>
 				</div>
 			))
