@@ -33,12 +33,12 @@
 	aria-label="Toggle dark mode"
 >
 	<span
-		class="icon-[fluent--weather-sunny-24-filled] block text-2xl transform transition-transform duration-300"
-		class:-translate-y-8={!isDark}
+		class="icon-[fluent--weather-sunny-24-filled] block text-2xl transform transition-transform duration-300 {!isDark &&
+			'-translate-y-8'}"
 	></span>
 
 	<span
-		class="icon-[fluent--weather-moon-24-filled] block text-2xl mt-2 transform transition-transform duration-300"
-		class:-translate-y-8={!isDark}
+		class="icon-[fluent--weather-moon-24-filled] block text-2xl mt-2 transform transition-transform duration-300 {!isDark &&
+			'-translate-y-8'}"
 	></span>
 </button>
