@@ -14,6 +14,15 @@ import '../styles/global.css'
 			content="Hi, I'm Toufiq, a passionate Frontend Developer specializing in creating interactive and visually appealing web experiences. With a strong interest in Artificial Intelligence (AI) and Internet of Things (IoT), I aim to build innovative solutions that bridge the gap between technology and user experience. Explore my portfolio to see my latest projects and collaborations."
 		/>
 		<title>Toufiq.</title>
+		<script>
+			const storedTheme = localStorage.getItem('theme')
+			const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches
+				? 'dark'
+				: 'light'
+
+			let isDark = (storedTheme || systemPreference) === 'dark'
+			document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light')
+		</script>
 	</head>
 	<body>
 		<slot />

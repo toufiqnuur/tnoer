@@ -1,8 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte'
-
 	let isDark = false
-	const THEME_KEY = 'theme'
 
 	function toggleTheme() {
 		const rootElement = document.documentElement
@@ -11,20 +8,10 @@
 		const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
 
 		rootElement.setAttribute('data-theme', newTheme)
-		localStorage.setItem(THEME_KEY, newTheme)
+		localStorage.setItem('theme', newTheme)
 
 		isDark = newTheme === 'dark'
 	}
-
-	onMount(() => {
-		const storedTheme = localStorage.getItem(THEME_KEY)
-		const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches
-			? 'dark'
-			: 'light'
-
-		isDark = (storedTheme || systemPreference) === 'dark'
-		document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light')
-	})
 </script>
 
 <button
