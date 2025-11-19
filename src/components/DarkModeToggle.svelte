@@ -1,11 +1,17 @@
 <script lang="ts">
+	import { onMount } from 'svelte'
+
+	let rootElement: HTMLElement
 	let isDark = false
 
-	function toggleTheme() {
-		const rootElement = document.documentElement
+	onMount(() => {
+		rootElement = document.documentElement
 		const currentTheme = rootElement.getAttribute('data-theme')
+		isDark = currentTheme === 'dark'
+	})
 
-		const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
+	function toggleTheme() {
+		const newTheme = isDark ? 'light' : 'dark'
 
 		rootElement.setAttribute('data-theme', newTheme)
 		localStorage.setItem('theme', newTheme)
