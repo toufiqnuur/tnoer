@@ -71,7 +71,7 @@ const otherLinks = [
 						{
 							siteLinks.map((site) => (
 								<li>
-									<a class="text-sm font-medium opacity-75" href={site.url}>
+									<a class="text-sm font-medium opacity-75" href={site.url} data-astro-prefetch>
 										{site.name}
 									</a>
 								</li>
@@ -90,6 +90,7 @@ const otherLinks = [
 										class="text-sm font-medium opacity-75"
 										href={item.url}
 										target={item.external ? '_blank' : '_self'}
+										data-astro-prefetch
 									>
 										{item.name}
 									</a>
