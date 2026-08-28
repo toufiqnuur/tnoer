@@ -1,12 +1,21 @@
 ---
 import { Image } from 'astro:assets'
 import DarkModeToggle from './DarkModeToggle.svelte'
+import logo from '../assets/img/easter-icon.png'
 ---
 
 <header class="py-4">
 	<div class="container flex items-center justify-between">
 		<a href="/" data-astro-prefetch>
-			<Image src="/img/easter-icon.png" width={128} height={80} alt="Tnoer" loading="eager" />
+			<Image
+				src={logo}
+				width={128}
+				height={80}
+				alt="Tnoer"
+				loading="eager"
+				fetchpriority="high"
+				densities={[1, 2]}
+			/>
 		</a>
 
 		<div

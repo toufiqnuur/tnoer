@@ -1,5 +1,13 @@
 ---
 import { Image } from 'astro:assets'
+import type { ImageMetadata } from 'astro:assets'
+
+const projectAssets = import.meta.glob('../assets/projects/*', {
+	eager: true,
+	import: 'default'
+}) as Record<string, ImageMetadata>
+
+const resolveAsset = (name: string): ImageMetadata => projectAssets[`../assets/projects/${name}`]
 
 interface Props {
 	data: {
@@ -22,22 +30,26 @@ const { data } = Astro.props
 >
 	<div class="relative aspect-[16/10] border-b-3 border-white bg-zinc-100 dark:border-zinc-700">
 		<Image
-			src={'/projects/' + data.image}
+			src={resolveAsset(data.image)}
 			width={800}
 			height={500}
 			alt={data.title}
 			class="dark:brightness-90"
 			loading="lazy"
+			widths={[480, 640, 800, 1200]}
+			sizes="(min-width: 768px) 50vw, 100vw"
 		/>
 		<div
 			class="absolute -bottom-11 left-4 h-16 w-16 overflow-hidden rounded-3xl border-3 border-white bg-zinc-100 shadow-sm dark:border-zinc-700 dark:shadow-lg"
 		>
 			<Image
-				src={'/projects/' + data.icon}
+				src={resolveAsset(data.icon)}
 				width={64}
 				height={64}
 				alt={data.title + ' icon'}
 				loading="lazy"
+				densities={[1, 2]}
+				sizes="64px"
 			/>
 		</div>
 
