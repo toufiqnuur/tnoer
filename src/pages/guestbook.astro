@@ -30,6 +30,10 @@ import Layout from '../layouts/Layout.astro'
 	}
 
 	function loadGiscus() {
+		if (document.getElementById('giscus-script') || !document.getElementById('giscus-container')) {
+			return
+		}
+
 		const storedTheme = localStorage.getItem('theme')
 		const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches
 
