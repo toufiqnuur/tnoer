@@ -4,7 +4,7 @@ import '../styles/global.css'
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -15,7 +15,7 @@ import '../styles/global.css'
 		/>
 		<title>Toufiq.</title>
 		<link rel="sitemap" href="/sitemap-index.xml" />
-		<script>
+		<script is:inline>
 			const storedTheme = localStorage.getItem('theme')
 			const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches
 				? 'dark'
