@@ -1,3 +1,4 @@
+@import '@fontsource-variable/montserrat';
 @import 'tailwindcss';
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
@@ -20,7 +21,7 @@ body::before {
 body::after {
 	content: '';
 	@apply absolute top-0 left-0 -z-10 h-full w-full md:h-6/12;
-	@apply bg-gradient-to-t from-white via-white/10 to-transparent;
+	@apply bg-linear-to-t from-white via-white/10 to-transparent;
 }
 
 html[data-theme='dark'] body::before {
