@@ -3,26 +3,40 @@
 	"type": "module",
 	"version": "0.1.0",
 	"scripts": {
-		"dev": "astro dev",
-		"build": "astro build",
-		"preview": "astro preview",
-		"astro": "astro"
+		"dev": "vp dev",
+		"build": "vp build",
+		"preview": "vp preview",
+		"prepare": "vp config"
 	},
 	"dependencies": {
-		"@astrojs/sitemap": "^3.7.3",
-		"@astrojs/svelte": "^7.2.2",
 		"@fontsource-variable/montserrat": "^5.3.0",
-		"@tailwindcss/vite": "^4.3.3",
-		"astro": "5.15.3",
-		"svelte": "^5.56.10",
-		"tailwindcss": "^4.3.3",
-		"typescript": "^5.9.3"
+		"@giscus/react": "^3.1.0",
+		"@tailwindcss/vite": "^4.3.5",
+		"@tanstack/react-router": "^1.170.46",
+		"@tanstack/react-start": "^1.169.5",
+		"react": "^19.3.1",
+		"react-dom": "^19.3.1",
+		"tailwindcss": "^4.3.5",
+		"typescript": "^7.0.2"
 	},
 	"devDependencies": {
-		"@iconify/json": "^2.2.521",
+		"@iconify/json": "^2.2.556",
 		"@iconify/tailwind4": "^1.2.3",
-		"prettier": "3.9.6",
-		"prettier-plugin-astro": "^0.14.1",
-		"prettier-plugin-tailwindcss": "^0.8.1"
+		"@types/node": "^26.6.6",
+		"@types/react": "^19.3.0",
+		"@types/react-dom": "^19.3.0",
+		"@vitejs/plugin-react": "^6.3.0",
+		"vite": "^1.6.0",
+		"vite-plus": "1.6.0"
+	},
+	"overrides": {
+		"vite": "npm:@voidzero-dev/vite-plus-core@1.6.0"
+	},
+	"devEngines": {
+		"packageManager": {
+			"name": "bun",
+			"version": "1.4.2",
+			"onFail": "download"
+		}
 	}
 }
