@@ -5,12 +5,11 @@ import * as GitHub from '@alchemy.run/github'
 import * as Output from 'alchemy/Output'
 import * as Layer from 'effect/Layer'
 
-export const Website = Cloudflare.Website.Vite('Website', {
-	env: {},
-	name: 'me'
-})
-
-export type WebsiteEnv = Cloudflare.InferEnv<typeof Website>
+export const Website = (name: string) =>
+	Cloudflare.Website.Vite('Website', {
+		env: {},
+		name
+	})
 
 export default Alchemy.Stack(
 	'noure',
@@ -19,7 +18,9 @@ export default Alchemy.Stack(
 		state: Cloudflare.state()
 	},
 	Effect.gen(function* () {
-		const website = yield* Website
+		const stage = yield* Alchemy.Stage
+		const webname = stage === 'prod' ? 'me' : `me-${stage}`
+		const website = yield* Website(webname)
 
 		if (process.env.PULL_REQUEST) {
 			yield* GitHub.Comment('preview-comment', {
