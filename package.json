@@ -9,11 +9,17 @@
 		"prepare": "vp config"
 	},
 	"dependencies": {
+		"@alchemy.run/cloudflare": "^2.0.0-beta.87",
+		"@alchemy.run/github": "^2.0.0-beta.87",
+		"@effect/platform-bun": "^4.1.4",
+		"@effect/platform-node": "^4.1.4",
 		"@fontsource-variable/montserrat": "^5.3.0",
 		"@giscus/react": "^3.1.0",
 		"@tailwindcss/vite": "^4.3.5",
 		"@tanstack/react-router": "^1.170.46",
 		"@tanstack/react-start": "^1.169.5",
+		"alchemy": "^2.0.0-beta.87",
+		"effect": "^4.1.4",
 		"react": "^19.3.1",
 		"react-dom": "^19.3.1",
 		"tailwindcss": "^4.3.5",

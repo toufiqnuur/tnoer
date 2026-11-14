@@ -16,6 +16,7 @@ export default defineConfig({
 		tsconfigPaths: true,
 		alias: { '~': new URL('./src', import.meta.url).pathname }
 	},
+	build: { minify: false },
 	fmt: {
 		useTabs: true,
 		singleQuote: true,
@@ -28,5 +29,14 @@ export default defineConfig({
 		},
 		ignorePatterns: ['node_modules/**']
 	},
-	plugins: lazyPlugins(() => [tailwindcss(), tanstackStart(), viteReact()])
+	plugins: lazyPlugins(() => [
+		tailwindcss(),
+		tanstackStart({
+			pages: [{ path: '/' }],
+			spa: { enabled: true, maskPath: '__shell.html' },
+			sitemap: { host: 'phiq.worker.dev' },
+			prerender: { crawlLinks: true, failOnError: false }
+		}),
+		viteReact()
+	])
 })
