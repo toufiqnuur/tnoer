@@ -16,7 +16,6 @@ export default defineConfig({
 		tsconfigPaths: true,
 		alias: { '~': new URL('./src', import.meta.url).pathname }
 	},
-	build: { minify: false },
 	fmt: {
 		useTabs: true,
 		singleQuote: true,
@@ -34,7 +33,7 @@ export default defineConfig({
 		tanstackStart({
 			pages: [{ path: '/' }],
 			spa: { enabled: true, maskPath: '__shell.html' },
-			sitemap: { host: 'phiq.worker.dev' },
+			sitemap: { host: 'me.phiq.worker.dev' },
 			prerender: { crawlLinks: true, failOnError: false }
 		}),
 		viteReact()
