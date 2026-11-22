@@ -1,5 +1,6 @@
 @import '@fontsource-variable/montserrat';
 @import 'tailwindcss';
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
@@ -43,4 +44,35 @@ html[data-theme='dark'] body::after {
 	padding-inline: 1rem;
 	width: 100%;
 	max-width: 1024px;
+}
+
+@keyframes ambient-breathe {
+	0%,
+	100% {
+		opacity: 0.3;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 0.5;
+		transform: scale(1.06);
+	}
+}
+
+.orb-ambient {
+	pointer-events: none;
+	background:
+		radial-gradient(ellipse 55% 45% at 50% 55%, rgb(56 189 248 / 0.22), transparent 70%),
+		radial-gradient(ellipse 35% 30% at 65% 45%, rgb(99 102 241 / 0.16), transparent 70%),
+		radial-gradient(ellipse 40% 35% at 35% 60%, rgb(14 165 233 / 0.14), transparent 70%);
+	filter: blur(36px);
+	mix-blend-mode: screen;
+	animation: ambient-breathe 9s ease-in-out infinite;
+	transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.orb-ambient {
+		animation: none;
+		opacity: 0.35;
+	}
 }
