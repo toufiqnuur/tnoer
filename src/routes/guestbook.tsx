@@ -27,7 +27,6 @@ function Guestbook() {
 						reactionsEnabled="0"
 						emitMetadata="0"
 						inputPosition="top"
-						// theme={isDark ? "dark" : "light"}
 						theme={theme}
 						lang="en"
 						loading="lazy"
