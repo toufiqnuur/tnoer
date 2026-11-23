@@ -1,5 +1,5 @@
-import { yapping } from '~/features/contents/lib/maerith'
-import type { ContentDocument } from '~/features/contents/lib/content-schema'
+import { yapping } from '../../src/features/contents/lib/maerith'
+import type { ContentDocument } from '../../src/features/contents/lib/content-schema'
 
 const pad = (value: number) => String(value).padStart(2, '0')
 
