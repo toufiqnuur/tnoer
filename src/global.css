@@ -69,10 +69,3 @@ html[data-theme='dark'] body::after {
 	animation: ambient-breathe 9s ease-in-out infinite;
 	transform-origin: center;
 }
-
-@media (prefers-reduced-motion: reduce) {
-	.orb-ambient {
-		animation: none;
-		opacity: 0.35;
-	}
-}

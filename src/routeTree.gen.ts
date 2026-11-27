@@ -15,184 +15,205 @@ import { Route as SupportMeRouteImport } from './routes/support-me'
 import { Route as UsesRouteImport } from './routes/uses'
 import { Route as PostsIndexRouteImport } from './routes/posts.index'
 import { Route as PostsSlugRouteImport } from './routes/posts.$slug'
+import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
 import { Route as TeardownsIndexRouteImport } from './routes/teardowns.index'
 
 const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
+	id: '/',
+	path: '/',
+	getParentRoute: () => rootRouteImport
 } as any)
 const GuestbookRoute = GuestbookRouteImport.update({
-  id: '/guestbook',
-  path: '/guestbook',
-  getParentRoute: () => rootRouteImport,
+	id: '/guestbook',
+	path: '/guestbook',
+	getParentRoute: () => rootRouteImport
 } as any)
 const SupportMeRoute = SupportMeRouteImport.update({
-  id: '/support-me',
-  path: '/support-me',
-  getParentRoute: () => rootRouteImport,
+	id: '/support-me',
+	path: '/support-me',
+	getParentRoute: () => rootRouteImport
 } as any)
 const UsesRoute = UsesRouteImport.update({
-  id: '/uses',
-  path: '/uses',
-  getParentRoute: () => rootRouteImport,
+	id: '/uses',
+	path: '/uses',
+	getParentRoute: () => rootRouteImport
 } as any)
 const PostsIndexRoute = PostsIndexRouteImport.update({
-  id: '/posts/',
-  path: '/posts/',
-  getParentRoute: () => rootRouteImport,
+	id: '/posts/',
+	path: '/posts/',
+	getParentRoute: () => rootRouteImport
 } as any)
 const PostsSlugRoute = PostsSlugRouteImport.update({
-  id: '/posts/$slug',
-  path: '/posts/$slug',
-  getParentRoute: () => rootRouteImport,
+	id: '/posts/$slug',
+	path: '/posts/$slug',
+	getParentRoute: () => rootRouteImport
+} as any)
+const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
+	id: '/projects/',
+	path: '/projects/',
+	getParentRoute: () => rootRouteImport
 } as any)
 const TeardownsIndexRoute = TeardownsIndexRouteImport.update({
-  id: '/teardowns/',
-  path: '/teardowns/',
-  getParentRoute: () => rootRouteImport,
+	id: '/teardowns/',
+	path: '/teardowns/',
+	getParentRoute: () => rootRouteImport
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/guestbook': typeof GuestbookRoute
-  '/support-me': typeof SupportMeRoute
-  '/uses': typeof UsesRoute
-  '/posts/$slug': typeof PostsSlugRoute
-  '/posts/': typeof PostsIndexRoute
-  '/teardowns/': typeof TeardownsIndexRoute
+	'/': typeof IndexRoute
+	'/guestbook': typeof GuestbookRoute
+	'/support-me': typeof SupportMeRoute
+	'/uses': typeof UsesRoute
+	'/posts/$slug': typeof PostsSlugRoute
+	'/posts/': typeof PostsIndexRoute
+	'/projects/': typeof ProjectsIndexRoute
+	'/teardowns/': typeof TeardownsIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/guestbook': typeof GuestbookRoute
-  '/support-me': typeof SupportMeRoute
-  '/uses': typeof UsesRoute
-  '/posts/$slug': typeof PostsSlugRoute
-  '/posts': typeof PostsIndexRoute
-  '/teardowns': typeof TeardownsIndexRoute
+	'/': typeof IndexRoute
+	'/guestbook': typeof GuestbookRoute
+	'/support-me': typeof SupportMeRoute
+	'/uses': typeof UsesRoute
+	'/posts/$slug': typeof PostsSlugRoute
+	'/posts': typeof PostsIndexRoute
+	'/projects': typeof ProjectsIndexRoute
+	'/teardowns': typeof TeardownsIndexRoute
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/guestbook': typeof GuestbookRoute
-  '/support-me': typeof SupportMeRoute
-  '/uses': typeof UsesRoute
-  '/posts/$slug': typeof PostsSlugRoute
-  '/posts/': typeof PostsIndexRoute
-  '/teardowns/': typeof TeardownsIndexRoute
+	__root__: typeof rootRouteImport
+	'/': typeof IndexRoute
+	'/guestbook': typeof GuestbookRoute
+	'/support-me': typeof SupportMeRoute
+	'/uses': typeof UsesRoute
+	'/posts/$slug': typeof PostsSlugRoute
+	'/posts/': typeof PostsIndexRoute
+	'/projects/': typeof ProjectsIndexRoute
+	'/teardowns/': typeof TeardownsIndexRoute
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/guestbook'
-    | '/support-me'
-    | '/uses'
-    | '/posts/$slug'
-    | '/posts/'
-    | '/teardowns/'
-  fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/guestbook'
-    | '/support-me'
-    | '/uses'
-    | '/posts/$slug'
-    | '/posts'
-    | '/teardowns'
-  id:
-    | '__root__'
-    | '/'
-    | '/guestbook'
-    | '/support-me'
-    | '/uses'
-    | '/posts/$slug'
-    | '/posts/'
-    | '/teardowns/'
-  fileRoutesById: FileRoutesById
+	fileRoutesByFullPath: FileRoutesByFullPath
+	fullPaths:
+		| '/'
+		| '/guestbook'
+		| '/support-me'
+		| '/uses'
+		| '/posts/$slug'
+		| '/posts/'
+		| '/projects/'
+		| '/teardowns/'
+	fileRoutesByTo: FileRoutesByTo
+	to:
+		| '/'
+		| '/guestbook'
+		| '/support-me'
+		| '/uses'
+		| '/posts/$slug'
+		| '/posts'
+		| '/projects'
+		| '/teardowns'
+	id:
+		| '__root__'
+		| '/'
+		| '/guestbook'
+		| '/support-me'
+		| '/uses'
+		| '/posts/$slug'
+		| '/posts/'
+		| '/projects/'
+		| '/teardowns/'
+	fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  GuestbookRoute: typeof GuestbookRoute
-  SupportMeRoute: typeof SupportMeRoute
-  UsesRoute: typeof UsesRoute
-  PostsSlugRoute: typeof PostsSlugRoute
-  PostsIndexRoute: typeof PostsIndexRoute
-  TeardownsIndexRoute: typeof TeardownsIndexRoute
+	IndexRoute: typeof IndexRoute
+	GuestbookRoute: typeof GuestbookRoute
+	SupportMeRoute: typeof SupportMeRoute
+	UsesRoute: typeof UsesRoute
+	PostsSlugRoute: typeof PostsSlugRoute
+	PostsIndexRoute: typeof PostsIndexRoute
+	ProjectsIndexRoute: typeof ProjectsIndexRoute
+	TeardownsIndexRoute: typeof TeardownsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
-  interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/guestbook': {
-      id: '/guestbook'
-      path: '/guestbook'
-      fullPath: '/guestbook'
-      preLoaderRoute: typeof GuestbookRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/support-me': {
-      id: '/support-me'
-      path: '/support-me'
-      fullPath: '/support-me'
-      preLoaderRoute: typeof SupportMeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/uses': {
-      id: '/uses'
-      path: '/uses'
-      fullPath: '/uses'
-      preLoaderRoute: typeof UsesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/posts/': {
-      id: '/posts/'
-      path: '/posts'
-      fullPath: '/posts/'
-      preLoaderRoute: typeof PostsIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/posts/$slug': {
-      id: '/posts/$slug'
-      path: '/posts/$slug'
-      fullPath: '/posts/$slug'
-      preLoaderRoute: typeof PostsSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/teardowns/': {
-      id: '/teardowns/'
-      path: '/teardowns'
-      fullPath: '/teardowns/'
-      preLoaderRoute: typeof TeardownsIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-  }
+	interface FileRoutesByPath {
+		'/': {
+			id: '/'
+			path: '/'
+			fullPath: '/'
+			preLoaderRoute: typeof IndexRouteImport
+			parentRoute: typeof rootRouteImport
+		}
+		'/guestbook': {
+			id: '/guestbook'
+			path: '/guestbook'
+			fullPath: '/guestbook'
+			preLoaderRoute: typeof GuestbookRouteImport
+			parentRoute: typeof rootRouteImport
+		}
+		'/support-me': {
+			id: '/support-me'
+			path: '/support-me'
+			fullPath: '/support-me'
+			preLoaderRoute: typeof SupportMeRouteImport
+			parentRoute: typeof rootRouteImport
+		}
+		'/uses': {
+			id: '/uses'
+			path: '/uses'
+			fullPath: '/uses'
+			preLoaderRoute: typeof UsesRouteImport
+			parentRoute: typeof rootRouteImport
+		}
+		'/posts/': {
+			id: '/posts/'
+			path: '/posts'
+			fullPath: '/posts/'
+			preLoaderRoute: typeof PostsIndexRouteImport
+			parentRoute: typeof rootRouteImport
+		}
+		'/posts/$slug': {
+			id: '/posts/$slug'
+			path: '/posts/$slug'
+			fullPath: '/posts/$slug'
+			preLoaderRoute: typeof PostsSlugRouteImport
+			parentRoute: typeof rootRouteImport
+		}
+		'/projects/': {
+			id: '/projects/'
+			path: '/projects'
+			fullPath: '/projects/'
+			preLoaderRoute: typeof ProjectsIndexRouteImport
+			parentRoute: typeof rootRouteImport
+		}
+		'/teardowns/': {
+			id: '/teardowns/'
+			path: '/teardowns'
+			fullPath: '/teardowns/'
+			preLoaderRoute: typeof TeardownsIndexRouteImport
+			parentRoute: typeof rootRouteImport
+		}
+	}
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  GuestbookRoute: GuestbookRoute,
-  SupportMeRoute: SupportMeRoute,
-  UsesRoute: UsesRoute,
-  PostsSlugRoute: PostsSlugRoute,
-  PostsIndexRoute: PostsIndexRoute,
-  TeardownsIndexRoute: TeardownsIndexRoute,
+	IndexRoute: IndexRoute,
+	GuestbookRoute: GuestbookRoute,
+	SupportMeRoute: SupportMeRoute,
+	UsesRoute: UsesRoute,
+	PostsSlugRoute: PostsSlugRoute,
+	PostsIndexRoute: PostsIndexRoute,
+	ProjectsIndexRoute: ProjectsIndexRoute,
+	TeardownsIndexRoute: TeardownsIndexRoute
 }
 export const routeTree = rootRouteImport
-  ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+	._addFileChildren(rootRouteChildren)
+	._addFileTypes<FileRouteTypes>()
 
 import type { getRouter } from './router.tsx'
 import type { createStart } from '@tanstack/react-start'
 declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
+	interface Register {
+		ssr: true
+		router: Awaited<ReturnType<typeof getRouter>>
+	}
 }
