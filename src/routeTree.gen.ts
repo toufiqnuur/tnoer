@@ -19,24 +19,39 @@ import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
 import { Route as TeardownsIndexRouteImport } from './routes/teardowns.index'
 
 const IndexRoute = IndexRouteImport.update({
-	id: '/',
-	path: '/',
-	getParentRoute: () => rootRouteImport
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const GuestbookRoute = GuestbookRouteImport.update({
-	id: '/guestbook',
-	path: '/guestbook',
-	getParentRoute: () => rootRouteImport
+  id: '/guestbook',
+  path: '/guestbook',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const SupportMeRoute = SupportMeRouteImport.update({
-	id: '/support-me',
-	path: '/support-me',
-	getParentRoute: () => rootRouteImport
+  id: '/support-me',
+  path: '/support-me',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const UsesRoute = UsesRouteImport.update({
-	id: '/uses',
-	path: '/uses',
-	getParentRoute: () => rootRouteImport
+  id: '/uses',
+  path: '/uses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PostsIndexRoute = PostsIndexRouteImport.update({
+  id: '/posts/',
+  path: '/posts/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PostsSlugRoute = PostsSlugRouteImport.update({
+  id: '/posts/$slug',
+  path: '/posts/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeardownsIndexRoute = TeardownsIndexRouteImport.update({
+  id: '/teardowns/',
+  path: '/teardowns/',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const PostsIndexRoute = PostsIndexRouteImport.update({
 	id: '/posts/',
@@ -206,14 +221,14 @@ const rootRouteChildren: RootRouteChildren = {
 	TeardownsIndexRoute: TeardownsIndexRoute
 }
 export const routeTree = rootRouteImport
-	._addFileChildren(rootRouteChildren)
-	._addFileTypes<FileRouteTypes>()
+  ._addFileChildren(rootRouteChildren)
+  ._addFileTypes<FileRouteTypes>()
 
 import type { getRouter } from './router.tsx'
 import type { createStart } from '@tanstack/react-start'
 declare module '@tanstack/react-start' {
-	interface Register {
-		ssr: true
-		router: Awaited<ReturnType<typeof getRouter>>
-	}
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
 }
